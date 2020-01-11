@@ -1,6 +1,6 @@
 var express = require('express');
 const bodyParser = require('body-parser');
-var hashFunc = require('./hash.js/index.js');
+var hashFunc = require('./hash.js');
 var path = require('path');
 
 var app = express();
