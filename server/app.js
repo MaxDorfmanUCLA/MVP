@@ -4,7 +4,7 @@ var hashFunc = require('./hash.js');
 var path = require('path');
 const Pool = require('pg').Pool
 const pool = new Pool({
-  user: 'postgres',
+  user: 'maxdorfman',
   host: 'localhost',
   database: 'hackprac', 
   password: 'mnm',
@@ -27,13 +27,20 @@ app.listen(8080, function(){
 })
 
 //login
+app.get('/:username/:password', function(req,res){
+    var resultObj = hashFunc(req.params.password);
+    res.send(resultObj);
+    //add to DB
+})
+
+//login
 app.get('/:password', function(req,res){
     var resultObj = hashFunc(req.params.password);
     res.send(resultObj);
     //add to DB
 })
 
-app.get('/mylist', function(req,res){
+app.get('/', function(req,res){
     var resultObj = hashFunc(req.params.password);
     res.send(resultObj);
     //add to DB
@@ -42,10 +49,11 @@ app.get('/mylist', function(req,res){
 app.get('/', function(req,res){
     pool.query(`SELECT * FROM users`, (error, result) => { 
         if (error) {
-          response.status(400)
+          res.status(400)
           throw error
         }
-          response.status(200).json(results.rows)
+            console.log()
+          res.status(200).json(result.rows)
     })
+    
 })
-

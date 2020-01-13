@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Form from './components/form.js';
 import List from './components/list.js';
 import Signup from './components/signup.js';
-import $ from 'jquery';
+
 
 class App extends React.Component {
     constructor(props){

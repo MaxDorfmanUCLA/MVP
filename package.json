@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "live-server ./client/dist",
     "react-dev": "webpack -d --watch",
-    "start": "live-server ./client/dist"
+    "start": "nodemon ./server/app.js"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +18,7 @@
     "jquery": "^3.4.1",
     "lorem-ipsum": "^2.0.3",
     "nodemon": "^2.0.2",
+    "pg": "^7.17.1",
     "postgres": "^1.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"

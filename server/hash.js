@@ -27,24 +27,16 @@ var letters = {
         z: 26,
 }
 
-const total_users = 20;
 
 let hashFunc = function(passStr) {
     passStr = passStr.toLowerCase();
     let arr = passStr.split('');
-    let total = 0;
     let hashPass = '';
     for (var i=0; i<arr.length; i++){
         arr[i] = letters[arr[i]];
         hashPass+= arr[i];
-        total+=arr[i];
     }
-    let userId = total%20;
-    let result = {
-        id: userId,
-        password: hashPass
-    }
-    return result;
+    return hashPass;
 }
 
 
