@@ -15,7 +15,7 @@ CREATE TABLE content(
     id              SERIAL PRIMARY KEY, 
     username        INTEGER REFERENCES users(id),
     videoURL        VARCHAR(200),
-    mp3             VARCHAR(200),
+    mp3             VARCHAR(200)
 );
 
 
